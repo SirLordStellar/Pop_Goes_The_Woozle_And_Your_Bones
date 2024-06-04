@@ -1,0 +1,2 @@
+# You've uploaded Woozles onto your Circuit Playground Express!  Why would you do that?!  Now they're going to try to steal your bones and your only method of stopping them is your Hunny pressure washer.  When a light lights up, that means a Woozle is there, and you need to either touch its touch pad or press its button to use your pressure washer and blast them away.  They're probably fine.  But don't press a button when a Woozle isn't there or you'll be executed immediately for wasting Hunny.
+
