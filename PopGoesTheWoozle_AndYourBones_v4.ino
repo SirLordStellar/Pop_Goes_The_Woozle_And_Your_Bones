@@ -171,6 +171,96 @@ void touching() {
       stealbones();
     }
     }
+  if (CircuitPlayground.readCap(9) >= 800 && !woozletouchcool[1] && !stilltouching[1] && !woozlecooldown[3]) {
+    stilltouching[1] = 1;
+     }
+     else if (CircuitPlayground.readCap(9) < 800 && !woozletouchcool[1] && stilltouching[1]) {
+      if (ison[3]) {
+      score += woozlescores[3];
+      woozle3.restart();
+      woozletouchcool[1] = 1;
+      ison[3] = 0;
+      stilltouching[1] = 0;
+      woozlecooldown[3] = 1;
+    } else {
+      stealbones();
+    }
+    }
+  if (CircuitPlayground.readCap(10) >= 800 && !woozletouchcool[2] && !stilltouching[2] && !woozlecooldown[4]) {
+    stilltouching[2] = 1;
+     }
+     else if (CircuitPlayground.readCap(10) < 800 && !woozletouchcool[2] && stilltouching[2]) {
+      if (ison[4]) {
+      score += woozlescores[4];
+      woozle3.restart();
+      woozletouchcool[2] = 1;
+      ison[4] = 0;
+      stilltouching[2] = 0;
+      woozlecooldown[4] = 1;
+    } else {
+      stealbones();
+    }
+    }
+  if (CircuitPlayground.readCap(3) >= 800 && !woozletouchcool[3] && !stilltouching[3] && !woozlecooldown[5]) {
+    stilltouching[3] = 1;
+     }
+     else if (CircuitPlayground.readCap(3) < 800 && !woozletouchcool[3] && stilltouching[3]) {
+      if (ison[5]) {
+      score += woozlescores[5];
+      woozle3.restart();
+      woozletouchcool[3] = 1;
+      ison[5] = 0;
+      stilltouching[3] = 0;
+      woozlecooldown[5] = 1;
+    } else {
+      stealbones();
+    }
+    }
+  if (CircuitPlayground.readCap(2) >= 800 && !woozletouchcool[4] && !stilltouching[4] && !woozlecooldown[6]) {
+    stilltouching[4] = 1;
+     }
+     else if (CircuitPlayground.readCap(2) < 800 && !woozletouchcool[4] && stilltouching[4]) {
+      if (ison[6]) {
+      score += woozlescores[4];
+      woozle3.restart();
+      woozletouchcool[4] = 1;
+      ison[6] = 0;
+      stilltouching[4] = 0;
+      woozlecooldown[6] = 1;
+    } else {
+      stealbones();
+    }
+    }
+  if (CircuitPlayground.readCap(0) >= 800 && !woozletouchcool[5] && !stilltouching[5] && !woozlecooldown[7]) {
+    stilltouching[5] = 1;
+     }
+     else if (CircuitPlayground.readCap(0) < 800 && !woozletouchcool[5] && stilltouching[5]) {
+      if (ison[7]) {
+      score += woozlescores[7];
+      woozle3.restart();
+      woozletouchcool[0] = 1;
+      ison[7] = 0;
+      stilltouching[5] = 0;
+      woozlecooldown[7] = 1;
+    } else {
+      stealbones();
+    }
+    }
+  if (CircuitPlayground.readCap(1) >= 800 && !woozletouchcool[6] && !stilltouching[6] && !woozlecooldown[8]) {
+    stilltouching[6] = 1;
+     }
+     else if (CircuitPlayground.readCap(1) < 800 && !woozletouchcool[6] && stilltouching[6]) {
+      if (ison[8]) {
+      score += woozlescores[8];
+      woozle3.restart();
+      woozletouchcool[6] = 1;
+      ison[8] = 0;
+      stilltouching[6] = 0;
+      woozlecooldown[8] = 1;
+    } else {
+      stealbones();
+    }
+    }
 
   }
 
@@ -209,29 +299,77 @@ void woozlepolling() {
     woozletouchcool[0] = 0;
     woozle3.repeat();
   }
-  if (woozle4.isExpired()) {
+  if (woozle4.isExpired() && ison[3]) {
+    if (woozletimeleft[3] > 1) {
+      woozletimeleft[3]--;
+    } else {
+      stealbones();
+    }
+    woozle4.repeat();
+  } else if (woozle4.isExpired() && woozletouchcool[1] && !stilltouching[1]) {
+    woozletouchcool[1] = 0;
     woozle4.repeat();
   }
-  if (woozle5.isExpired()) {
+  if (woozle5.isExpired() && ison[4]) {
+    if (woozletimeleft[4] > 1) {
+      woozletimeleft[4]--;
+    } else {
+      stealbones();
+    }
+    woozle5.repeat();
+  } else if (woozle5.isExpired() && woozletouchcool[2] && !stilltouching[2]) {
+    woozletouchcool[2] = 0;
     woozle5.repeat();
   }
-  if (woozle6.isExpired()) {
+  if (woozle6.isExpired() && ison[5]) {
+    if (woozletimeleft[5] > 1) {
+      woozletimeleft[5]--;
+    } else {
+      stealbones();
+    }
+    woozle6.repeat();
+  } else if (woozle6.isExpired() && woozletouchcool[3] && !stilltouching[3]) {
+    woozletouchcool[3] = 0;
     woozle6.repeat();
   }
-  if (woozle7.isExpired()) {
+  if (woozle7.isExpired() && ison[6]) {
+    if (woozletimeleft[6] > 1) {
+      woozletimeleft[6]--;
+    } else {
+      stealbones();
+    }
+    woozle7.repeat();
+  } else if (woozle7.isExpired() && woozletouchcool[4] && !stilltouching[4]) {
+    woozletouchcool[4] = 0;
     woozle7.repeat();
   }
-  if (woozle8.isExpired()) {
+  if (woozle8.isExpired() && ison[7]) {
+    if (woozletimeleft[7] > 1) {
+      woozletimeleft[7]--;
+    } else {
+      stealbones();
+    }
+    woozle8.repeat();
+  } else if (woozle8.isExpired() && woozletouchcool[5] && !stilltouching[5]) {
+    woozletouchcool[5] = 0;
     woozle8.repeat();
   }
-  if (woozle9.isExpired()) {
+  if (woozle9.isExpired() && ison[8]) {
+    if (woozletimeleft[8] > 1) {
+      woozletimeleft[8]--;
+    } else {
+      stealbones();
+    }
+    woozle9.repeat();
+  } else if (woozle9.isExpired() && woozletouchcool[6] && !stilltouching[6]) {
+    woozletouchcool[6] = 0;
     woozle9.repeat();
   }
 }
 
 //randomly picks where a woozle will appear
 void woozleapproach() {
-  woozleon = random(1, 4);
+  woozleon = random(1, 10);
   switch (woozleon) {
     case 1:
       if (!ison[0] && !woozlecooldown[0]) {
@@ -261,16 +399,145 @@ void woozleapproach() {
       }
     break;
     case 4:
+      if (!ison[woozleon - 1] && !woozlecooldown[woozleon - 1]) {
+        woozlescores[woozleon - 1] = scorestart[stagenum];
+        woozlemillis[woozleon - 1] = millis();
+        woozletimeleft[woozleon - 1] = 4 - stagenum;
+        woozle4.restart();
+        ison[woozleon - 1] = 1;
+      }
     break;
     case 5:
+      if (!ison[woozleon - 1] && !woozlecooldown[woozleon - 1]) {
+        woozlescores[woozleon - 1] = scorestart[stagenum];
+        woozlemillis[woozleon - 1] = millis();
+        woozletimeleft[woozleon - 1] = 4 - stagenum;
+        woozle5.restart();
+        ison[woozleon - 1] = 1;
+      }
     break;
     case 6:
+      if (!ison[woozleon - 1] && !woozlecooldown[woozleon - 1]) {
+        woozlescores[woozleon - 1] = scorestart[stagenum];
+        woozlemillis[woozleon - 1] = millis();
+        woozletimeleft[woozleon - 1] = 4 - stagenum;
+        woozle6.restart();
+        ison[woozleon - 1] = 1;
+      }
     break;
     case 7:
+      if (!ison[woozleon - 1] && !woozlecooldown[woozleon - 1]) {
+        woozlescores[woozleon - 1] = scorestart[stagenum];
+        woozlemillis[woozleon - 1] = millis();
+        woozletimeleft[woozleon - 1] = 4 - stagenum;
+        woozle7.restart();
+        ison[woozleon - 1] = 1;
+      }
     break;
     case 8:
+      if (!ison[woozleon - 1] && !woozlecooldown[woozleon - 1]) {
+        woozlescores[woozleon - 1] = scorestart[stagenum];
+        woozlemillis[woozleon - 1] = millis();
+        woozletimeleft[woozleon - 1] = 4 - stagenum;
+        woozle8.restart();
+        ison[woozleon - 1] = 1;
+      }
     break;
     case 9:
+      if (!ison[woozleon - 1] && !woozlecooldown[woozleon - 1]) {
+        woozlescores[woozleon - 1] = scorestart[stagenum];
+        woozlemillis[woozleon - 1] = millis();
+        woozletimeleft[woozleon - 1] = 4 - stagenum;
+        woozle9.restart();
+        ison[woozleon - 1] = 1;
+      }
+    break;
+  }
+}
+
+void woozleinfiniteapproach() {
+  woozleon = random(1, 10);
+  switch (woozleon) {
+    case 1:
+      if (!ison[0] && !woozlecooldown[0]) {
+        woozlescores[0] = scorestart[stagenum];
+        woozlemillis[0] = millis();
+        woozletimeleft[0] = 1;
+        woozle1.restart();
+        ison[0] = 1;
+      }
+    break;
+    case 2:
+      if (!ison[1] && !woozlecooldown[1]) {
+        woozlescores[1] = scorestart[stagenum];
+        woozlemillis[1] = millis();
+        woozletimeleft[1] = 1;
+        woozle2.restart();
+        ison[1] = 1;
+      }
+    break;
+    case 3:
+      if (!ison[2] && !woozlecooldown[2]) {
+        woozlescores[woozleon - 1] = scorestart[stagenum];
+        woozlemillis[woozleon - 1] = millis();
+        woozletimeleft[woozleon - 1] = 1;
+        woozle3.restart();
+        ison[woozleon - 1] = 1;
+      }
+    break;
+    case 4:
+      if (!ison[woozleon - 1] && !woozlecooldown[woozleon - 1]) {
+        woozlescores[woozleon - 1] = scorestart[stagenum];
+        woozlemillis[woozleon - 1] = millis();
+        woozletimeleft[woozleon - 1] = 1;
+        woozle4.restart();
+        ison[woozleon - 1] = 1;
+      }
+    break;
+    case 5:
+      if (!ison[woozleon - 1] && !woozlecooldown[woozleon - 1]) {
+        woozlescores[woozleon - 1] = scorestart[stagenum];
+        woozlemillis[woozleon - 1] = millis();
+        woozletimeleft[woozleon - 1] = 1;
+        woozle5.restart();
+        ison[woozleon - 1] = 1;
+      }
+    break;
+    case 6:
+      if (!ison[woozleon - 1] && !woozlecooldown[woozleon - 1]) {
+        woozlescores[woozleon - 1] = scorestart[stagenum];
+        woozlemillis[woozleon - 1] = millis();
+        woozletimeleft[woozleon - 1] = 1;
+        woozle6.restart();
+        ison[woozleon - 1] = 1;
+      }
+    break;
+    case 7:
+      if (!ison[woozleon - 1] && !woozlecooldown[woozleon - 1]) {
+        woozlescores[woozleon - 1] = scorestart[stagenum];
+        woozlemillis[woozleon - 1] = millis();
+        woozletimeleft[woozleon - 1] = 1;
+        woozle7.restart();
+        ison[woozleon - 1] = 1;
+      }
+    break;
+    case 8:
+      if (!ison[woozleon - 1] && !woozlecooldown[woozleon - 1]) {
+        woozlescores[woozleon - 1] = scorestart[stagenum];
+        woozlemillis[woozleon - 1] = millis();
+        woozletimeleft[woozleon - 1] = 1;
+        woozle8.restart();
+        ison[woozleon - 1] = 1;
+      }
+    break;
+    case 9:
+      if (!ison[woozleon - 1] && !woozlecooldown[woozleon - 1]) {
+        woozlescores[woozleon - 1] = scorestart[stagenum];
+        woozlemillis[woozleon - 1] = millis();
+        woozletimeleft[woozleon - 1] = 1;
+        woozle9.restart();
+        ison[woozleon - 1] = 1;
+      }
     break;
   }
 }
@@ -278,8 +545,7 @@ void woozleapproach() {
 void woozlescoring() {
   for (int i = 0; i < 9; i++) {
     if (ison[i]) {
-      woozlescores[i] = millis()-woozlemillis[i];
-      woozlescores[i] *= stagenum;
+      woozlescores[i] = scorestart[stagenum] - (millis()-woozlemillis[i])*stagenum;
     }
   }
 }
@@ -321,6 +587,7 @@ void loop() {
           }
         delay(1000);
         Serial.println("1");
+        CircuitPlayground.clearPixels();
         onepressed = 0;
         twopressed = 0;
         } else {
@@ -336,6 +603,7 @@ void loop() {
           }
         delay(1000);
         Serial.println("1");
+        CircuitPlayground.clearPixels();
         onepressed = 0;
         twopressed = 0;
         }
@@ -352,7 +620,7 @@ void loop() {
       }
     break;
     case 1:
-      if (random(0,100) == 10) {
+      if (random(0,50) == 10) {
         woozleapproach();
       }
       if (onepressed) {
@@ -387,7 +655,7 @@ void loop() {
       }
     break;
     case 2:
-      if (random(0,50) == 10) {
+      if (random(0, 25) == 10) {
         woozleapproach();
       }
       if (onepressed) {
@@ -422,7 +690,7 @@ void loop() {
       }
     break;
     case 3:
-    if (random(0,25) == 10) {
+    if (random(0, 15) == 10) {
         woozleapproach();
       }
       if (onepressed) {
@@ -460,8 +728,8 @@ void loop() {
     break;
     case 4:
     //infinite mode.  Has to be accessed from starting menu
-      if (random(0,25) == 10) {
-        woozleapproach();
+      if (random(0, 15) == 10) {
+        woozleinfiniteapproach();
       }
       if (onepressed) {
         onepressing();
